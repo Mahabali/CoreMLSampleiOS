@@ -15,9 +15,9 @@ struct ContentView: View {
        predictValue()
     }
     var body: some View {
+        NavigationView {
+           
         VStack(alignment: HorizontalAlignment.center, spacing: 50.0) {
-            
-        
             Text("Input Slider : \(inputValue, specifier: "%.2f")").font(Font.system(size: 20.0))
         Slider(
                value: $inputValue,
@@ -35,6 +35,8 @@ struct ContentView: View {
                }
            }.padding()
             Text(" Predicted Value :\(outputValue, specifier: "%.2f")").font(Font.system(size: 20.0)).bold()
+        }
+        .navigationTitle("TestCoreML")
         }
     }
     
